@@ -30,6 +30,12 @@ var minorAxisSquare = 40408299984087;   // meters, math.pow(minorAxis, 2)
 function distance(coord1, coord2, isCartesian) {
 
     if (isCartesian) {
+        //Just for convenience for flat surface
+        if (coord1.x != 'undefined') coord1.lat = coord1.x;
+        if (coord1.y != 'undefined') coord1.lng = coord1.y;
+        if (coord2.x != 'undefined') coord2.lat = coord2.x;
+        if (coord2.y != 'undefined') coord2.lng = coord2.y;
+
         return Math.sqrt(Math.pow((coord1.lat - coord2.lat), 2) + Math.pow((coord1.lng - coord2.lng), 2));
     }
 
