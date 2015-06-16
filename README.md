@@ -11,7 +11,7 @@ $ npm install coordist
 
 ### Using
 
-##### Calculate distance between two points
+#### Calculate distance between two points
 **_distance(coord1, coord2, isCartesian)_**
 
 |name|type|notice|
@@ -25,20 +25,20 @@ $ npm install coordist
 
 Returns distance between *coord1* and *coord2* in meters.
 
-##### Get decimal value of angle
+#### Get decimal value of angle
 **_getDecimalDegree(deg, min, sec)_**
 
-##### Returns latitude name
+#### Returns latitude name
 **_checkLatitude(lat)_**
 
 Returns *north* or *south*.
 
-##### Returns longitude name
+#### Returns longitude name
 **_checkLongitude(lng)_**
 
 Returns *west* or *east*.
 
-##### Converts degrees to radians
+#### Converts degrees to radians
 **_Deg2Rad(value)_**
 
 ###### Example of using:
