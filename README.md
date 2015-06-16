@@ -21,7 +21,7 @@ $ npm install coordist
 |isCartesian|Boolean|If YES - flat surface, NO - Geoid|
 
 > Coordinate object has three fields:
-> {lat, lng, elevation}, where elevation is height above the sea level (default is 0)
+> {lat, lng, elevation}, where elevation is altitude (default is 0)
 
 Returns distance between *coord1* and *coord2* in meters.
 
