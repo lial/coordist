@@ -23,7 +23,7 @@ var minorAxisSquare = 40408299984087;   // meters, math.pow(minorAxis, 2)
  * @var coordX {lat, lng, elevation}
  * @var lat - latitude (широта)
  * @var lng - longitude (долгота)
- * @var elevation - elevation above the sea level (высота над уровнем моря)
+ * @var elevation - altitude (высота над уровнем моря)
  *
  * @return Number
  */
