@@ -1,56 +1,43 @@
 # CoorDist
-Count distance between two points as on geoid as on flat surface (cartesian coordinate system)
+Count distance between two points as on geoid(WGS84 format) as on flat surface (cartesian coordinate system)
 
-### Description
-This Node.JS module was ported from php library (https://github.com/mrXCray/PhoneCodes)
-It formats phone number in pretty, more readable string, depends on country code and length of phone number.
+## Description
+This Node.JS module was ported from php class of [domino](http://phpclub.ru/talk/threads/%D1%80%D0%B0%D1%81%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83-%D0%B4%D0%B2%D1%83%D0%BC%D1%8F-%D1%82%D0%BE%D1%87%D0%BA%D0%B0%D0%BC%D0%B8-%D0%B7%D0%B5%D0%BC%D0%BB%D0%B8-%D0%B2-gps-%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82%D0%B0%D1%85-%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%B0-wgs84.54170/)
+For geoid coordinates module hase more accuracy than haversine formulae.
 
-### Installation
+## Installation
 ```
-$ npm install phormatter
+$ npm install coordist
 ```
 
-### Using
+## Using
 
-Module has only one function *format*
+### Calculate distance between two points
+function distance(coord1, coord2, isCartesian);
+
+### Get decimal value of angle
+function getDecimalDegree(deg, min, sec);
+
+### Returns latitude name
+function checkLatitude(lat);
+
+### Returns longitude name
+function checkLongitude(lng);
+
+### Converts degrees to radians
+function Deg2Rad(value);
 
 ```
-/**
- * Format phone number
- *
- * @param String phone Input phone number
- * @param Char divider Divider in number between digit blocks (Default is minus: 123-45-67)
- * @param Bool plusForce Is plus sign before number obligatory or as in input string (true - force plus)
- * @param Bool convertCharNumber Convert chars to digit in numbers (Eg: 1-800-APPLE will converted to 1-800-27753)
- *
- * @return string
- */
-format(phone, divider, plusForce, convertCharNumber) {
-  ...
-};
+
 ```
 
 Example of using:
 
 ```
-var phormatter = require('phormatter');
-var phone;
+var coordist = require('coordist');
 
-phone = '74991234567';
-phone = phormatter.format(phone);
-console.log(phone); //Output 7 (499) 123-45-67
 
-phone = phormatter.format(phone, ' ', true);
-console.log(phone); //Output +7 (499) 123 45 67
-
-phone = '001-800-APPLEGO';
-phone = phormatter.format(phone);
-console.log(phone); //Output +1 (800) 277-53-46
-
-phone = '+44 (0) 870 770 5370';
-phone = phormatter.format(phone);
-console.log(phone); //Output +44 (0870) 770-53-70
 ```
 
-### Support or Contact
+## Support or Contact
 Having questions? Contact me using email dev@instup.com

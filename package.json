@@ -1,0 +1,31 @@
+{
+  "name": "coordist",
+  "version": "0.0.1",
+  "description": "Count distance between two points as on geoid as on flat surface (cartesian coordinate system)",
+  "main": "coordist.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lial/coordist.git"
+  },
+  "keywords": [
+    "distance",
+    "coordinate",
+    "geoid",
+    "descartes",
+    "gps coordinate",
+    "two point distance",
+    "two points"
+  ],
+  "author": {
+    "name": "LIAL",
+    "email": "dev@instup.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lial/coordist/issues"
+  },
+  "homepage": "https://github.com/lial/coordist"
+}
