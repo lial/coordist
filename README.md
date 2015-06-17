@@ -47,7 +47,7 @@ Returns *west* or *east*.
 var coordist = require('coordist');
 
 //Calculate distance using WGS84 coordinates on Geoid
-coordist.distance({lat:37.2345, lng:55.245, elevation:0}, {lat:38.123, lng:57.126, alt:0}, false);
+coordist.distance({lat:37.2345, lng:55.245, alt:0}, {lat:38.123, lng:57.126, alt:0}, false);
 
 //Calculate distance on flat surface
 coordist.distance({x:2.5, y:3.4}, {x:7.12, y:8}, true);
