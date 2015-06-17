@@ -21,7 +21,7 @@ $ npm install coordist
 |isCartesian|Boolean|If YES - flat surface, NO - Geoid|
 
 > Coordinate object has three fields:
-> {lat, lng, elevation}, where elevation is altitude (default is 0)
+> {lat, lng, alt}, where alt is altitude (default is 0)
 
 Returns distance between *coord1* and *coord2* in meters.
 
@@ -47,7 +47,7 @@ Returns *west* or *east*.
 var coordist = require('coordist');
 
 //Calculate distance using WGS84 coordinates on Geoid
-coordist.distance({lat:37.2345, lng:55.245, elevation:0}, {lat:38.123, lng:57.126, elevation:0}, false);
+coordist.distance({lat:37.2345, lng:55.245, elevation:0}, {lat:38.123, lng:57.126, alt:0}, false);
 
 //Calculate distance on flat surface
 coordist.distance({x:2.5, y:3.4}, {x:7.12, y:8}, true);
