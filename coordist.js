@@ -20,10 +20,10 @@ var minorAxisSquare = 40408299984087;   // meters, math.pow(minorAxis, 2)
  * @param Object coord2 Second coordinate
  * @param Bool isCartesian Is surface flat (yes - cartesian coordinate, no - geoid)
  *
- * @var coordX {lat, lng, elevation}
+ * @var coordX {lat, lng, alt}
  * @var lat - latitude (широта)
  * @var lng - longitude (долгота)
- * @var elevation - altitude (высота над уровнем моря)
+ * @var alt - altitude (высота над уровнем моря)
  *
  * @return Number
  */
@@ -31,10 +31,10 @@ function distance(coord1, coord2, isCartesian) {
 
     if (isCartesian) {
         //Just for convenience for flat surface
-        if (coord1.x != 'undefined') coord1.lat = coord1.x;
-        if (coord1.y != 'undefined') coord1.lng = coord1.y;
-        if (coord2.x != 'undefined') coord2.lat = coord2.x;
-        if (coord2.y != 'undefined') coord2.lng = coord2.y;
+        if (coord1.x != undefined) coord1.lat = coord1.x;
+        if (coord1.y != undefined) coord1.lng = coord1.y;
+        if (coord2.x != undefined) coord2.lat = coord2.x;
+        if (coord2.y != undefined) coord2.lng = coord2.y;
 
         return Math.sqrt(Math.pow((coord1.lat - coord2.lat), 2) + Math.pow((coord1.lng - coord2.lng), 2));
     }
@@ -72,8 +72,8 @@ function distance(coord1, coord2, isCartesian) {
  * @return Number
  */
 function getDecimalDegree(deg, min, sec) {
-    if (min == 'undefined') min = 0;
-    if (sec == 'undefined') sec = 0;
+    if (min == undefined) min = 0;
+    if (sec == undefined) sec = 0;
 
     return deg < 0 ?
     (Math.abs(deg) + Math.abs(min) / 60 + Math.absabs(sec) / 3600) * -1 :
@@ -86,10 +86,10 @@ function getDecimalDegree(deg, min, sec) {
  *
  * @param Object point Point on surface
  *
- * @var point {lat, lng, elevation}
+ * @var point {lat, lng, alt}
  * @var lat - latitude (широта)
  * @var lng - longitude (долгота)
- * @var elevation - elevation above the sea level (высота над уровнем моря)
+ * @var alt - altitude (высота над уровнем моря)
  *
  * @return Number
  */
@@ -104,19 +104,19 @@ function getTrueAngle(point) {
  * @param Object point Point on surface
  * @param Number trueAngle True angle for point
  *
- * @var point {lat, lng, elevation}
+ * @var point {lat, lng, alt}
  * @var lat - latitude (широта)
  * @var lng - longitude (долгота)
- * @var elevation - elevation above the sea level (высота над уровнем моря)
+ * @var alt - altitude (высота над уровнем моря)
  *
  * @return Number
  */
 function getPointRadius(point, trueAngle) {
 
-    //If no elevation defined, will assume that point has no level above the sea
-    if (point.elevation == 'undefined') point.elevation = 0;
+    //If no altitude defined, will assume that point has no altitude
+    if (point.alt == undefined) point.alt = 0;
 
-    return point.elevation + 1 / Math.sqrt(
+    return point.alt + 1 / Math.sqrt(
         Math.pow(Math.cos(Deg2Rad(trueAngle)), 2) / majorAxisSquare +
         Math.pow(Math.sin(Deg2Rad(trueAngle)), 2) / minorAxisSquare
     );
